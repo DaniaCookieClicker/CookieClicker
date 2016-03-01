@@ -86,7 +86,6 @@ namespace CookieClicker
         }
         public void SetupWorld()
         {
-            
         }
         public void GameLoop()
         {
@@ -104,16 +103,10 @@ namespace CookieClicker
                 }
             }
             ToRemove.Clear();
-            if (toAdd.Count >= 1)
-            {
-                foreach (GameObject go in toAdd)
-                {
-                    GameObj.Add(go);
-                }
-            }
+            gameObj.AddRange(toAdd);
+            toAdd.Clear();
             GetGold();
             Combat();
-            toAdd.Clear();
             UpdateAnimations(currentFps);
             Update(currentFps);
             Draw();

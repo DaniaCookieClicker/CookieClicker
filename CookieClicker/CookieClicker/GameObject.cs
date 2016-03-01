@@ -30,7 +30,7 @@ namespace CookieClicker
         public virtual void Draw(Graphics dc)
         {
             
-            dc.DrawImage(sprite, position.X,position.Y,sprite.Width*scaleFactor,sprite.Height);
+            dc.DrawImage(sprite, position.X,position.Y,sprite.Width,sprite.Height);
             
         }
         public virtual void Update(float fps)
