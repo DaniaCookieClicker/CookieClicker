@@ -17,3 +17,4 @@ D:\Dania Games\Dania - Projekter\CookieClicker\CookieClicker\CookieClicker\bin\D
 D:\Dania Games\Dania - Projekter\CookieClicker\CookieClicker\CookieClicker\obj\Debug\CookieClicker.Form1.resources
 D:\Dania Games\Dania - Projekter\CookieClicker\CookieClicker\CookieClicker\obj\Debug\CookieClicker.Properties.Resources.resources
 D:\Dania Games\Dania - Projekter\CookieClicker\CookieClicker\CookieClicker\obj\Debug\CookieClicker.csproj.GenerateResource.Cache
+C:\Users\claus\Documents\CookieClicker\CookieClicker\CookieClicker\bin\Debug\Sprites\knight.png

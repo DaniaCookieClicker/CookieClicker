@@ -85,7 +85,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Sprites\Archer.png" />
-    <Content Include="Sprites\knight.png" />
+    <Content Include="Sprites\knight.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Sprites\swordman.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

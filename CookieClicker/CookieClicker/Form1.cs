@@ -37,5 +37,12 @@ namespace CookieClicker
         {
             GameWorld.BossHealth -= GameWorld.PlayerDmg;
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Unit knight = new Unit("Sprites/knight.png", new Vector2D(200, 150), 15, 40);
+            GameWorld.toAdd.Add(knight);
+            Unit.Cost(40);
+        }
     }
 }
