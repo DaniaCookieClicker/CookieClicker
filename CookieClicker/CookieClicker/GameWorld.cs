@@ -12,14 +12,10 @@ namespace CookieClicker
     
     class GameWorld
     {
-        private static bool one = true;
-        private static bool two = false;
-        private static bool three = false;
-        private static bool four = false;
-        private static bool five = false;
-        private static bool six = false;
+        private static int level = 1;
         private static int bossHealth = 6;
-        private static int playerDmg = 10;
+        private static int fixedHealth = 6;
+        private static int playerDmg = 5;
         private static int gold = 0;
         private static List<GameObject> toRemove = new List<GameObject>();
         public static List<GameObject> toAdd = new List<GameObject>();
@@ -115,8 +111,8 @@ namespace CookieClicker
                     GameObj.Add(go);
                 }
             }
-            Combat();
             GetGold();
+            Combat();
             toAdd.Clear();
             UpdateAnimations(currentFps);
             Update(currentFps);
@@ -143,7 +139,7 @@ namespace CookieClicker
         }
         private void Draw()
         {
-            dc.Clear(Color.Aqua);
+            dc.Clear(Color.White);
 
             foreach (GameObject go in gameObj)
             {
@@ -151,8 +147,9 @@ namespace CookieClicker
             }
 
             Font f = new Font("Arial", 16);
-            dc.DrawString(string.Format("Boss Health: {0}", bossHealth), f, Brushes.Black, 200, 200);
-            dc.DrawString(string.Format("Gold: {0}", gold), f, Brushes.Black, 200, 216);
+            dc.DrawString(string.Format("Boss Health: {0}", bossHealth), f, Brushes.Black, 350, 10);
+            dc.DrawString(string.Format("Gold: {0}", gold), f, Brushes.Black, 120, 10);
+            dc.DrawString(string.Format("Level: {0}", level), f, Brushes.Black, 10, 10);
 #if DEBUG
             dc.DrawString(string.Format("FPS: {0}", currentFps), f, Brushes.Black, 100, 100);
 #endif 
@@ -160,87 +157,18 @@ namespace CookieClicker
         }
         private static void Combat()
         {
-            if (BossHealth <= 0 && one)
+            if (BossHealth <= 0)
             {
-                BossHealth = 12;
-                two = true;
-                one = false;
-            }
-            if (BossHealth <= 0 && two)
-            {
-                BossHealth = 24;
-                three = true;
-                two = false;
-            }
-            if (BossHealth <= 0 && three)
-            {
-                BossHealth = 48;
-                four = true;
-                three = false;
-            }
-            if (BossHealth <= 0 && four)
-            {
-                BossHealth = 48 * 2;
-                five = true;
-                four = false;
-            }
-            if (BossHealth <= 0 && five)
-            {
-                BossHealth = 48 * 4;
-                six = true;
-                five = false;
+                bossHealth = 0;
+                level ++;
+                BossHealth += fixedHealth * level;
             }
         }
         private static void GetGold()
         {
-            int level = 1;
-            if (one == true)
+            if (bossHealth <= 0)
             {
-                if (level == 1)
-                {
-                    gold += bossHealth;
-                    level = 2;
-                }
-            }
-            if (two == true)
-            {
-                if (level == 2)
-                {
-                    gold += bossHealth;
-                    level = 3;
-                }
-            }
-            if (three == true)
-            {
-                if (level == 3)
-                {
-                    gold += bossHealth;
-                    level = 4;
-                }
-            }
-            if (four == true)
-            {
-                if (level == 4)
-                {
-                    gold += bossHealth;
-                    level = 5;
-                }
-            }
-            if (five == true)
-            {
-                if (level == 5)
-                {
-                    gold += bossHealth;
-                    level = 6;
-                }
-            }
-            if (six == true)
-            {
-                if (level == 6)
-                {
-                    gold += bossHealth;
-                    level = 7;
-                }
+                    gold += fixedHealth * level;
             }
         }
     }
