@@ -123,6 +123,7 @@ namespace CookieClicker
             UpdateAnimations(currentFps);
             Update(currentFps);
             Draw();
+            
         }
         private void Update(float fps)
         {
@@ -133,6 +134,7 @@ namespace CookieClicker
             {
                 go.Update(fps);
             }
+
 
         }
         private void UpdateAnimations(float fps)
