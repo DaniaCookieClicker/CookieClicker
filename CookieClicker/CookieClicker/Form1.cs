@@ -14,6 +14,8 @@ namespace CookieClicker
     {
         Graphics dc;
         GameWorld gw;
+        int choosenDragon;
+        int prevDragon;
         public Form1()
         {
             InitializeComponent();
@@ -39,24 +41,33 @@ namespace CookieClicker
             //if (GameWorld.BossHealth>0)
             //{
             // pictureBox1.Image = ((Image)Properties.Resources.ResourceManager.GetObject("Sprites/Dragon/dragon1.png"));
-            if (GameWorld.Level == 2)
+            if (GameWorld.BossHealth<=0)
             {
+                Random rand = new Random();
 
-            pictureBox1.Image = Image.FromFile("Sprites/Dragon/dragon1.png");
+            choosenDragon = rand.Next(1, 10);
+                if (prevDragon==choosenDragon)
+                {
+                    choosenDragon = rand.Next(1, 10);
+                }
+
+                
+            pictureBox1.Image = Image.FromFile("Sprites/Dragon/dragon"+choosenDragon+".png");
+              
                 pictureBox1.Refresh();
                 pictureBox1.Visible = true;
-                pictureBox1.Load();
+                prevDragon = choosenDragon;
+               
             }
-            if (GameWorld.Level == 3)
-            {
+            //if (GameWorld.BossHealth > 0&&GameWorld.Level == 3)
+            //{
 
-                pictureBox1.Image = Image.FromFile("Sprites/Dragon/dragon2.png");
-                pictureBox1.Refresh();
-                pictureBox1.Visible = true;
-            }
-            //pictureBox1.Refresh();
-            //pictureBox1.Visible = true;
-            // }
+            //    pictureBox1.Image = Image.FromFile("Sprites/Dragon/dragon2.png");
+            //    pictureBox1.Refresh();
+            //    pictureBox1.Visible = true;
+                
+            //}
+           
         }
 
 
