@@ -15,12 +15,8 @@ namespace CookieClicker
         private int dps;
         Thread damage = new Thread(new ParameterizedThreadStart(Dps));
 
-        public Unit(string imagePath, Vector2D startPosition, int dps, int cost) : base(imagePath, startPosition)
-        {
-            this.dps = dps;
-            this.cost = cost;
-            damage.Start(dps);
-        }
+        public Unit(string imagePath, Vector2D startPosition) : base(imagePath, startPosition)
+        { }
         public static void Cost(int cost)
         {
             GameWorld.Gold -= cost;
