@@ -10,22 +10,17 @@ namespace CookieClicker
 {
     class Swordman : Unit
     {
-        private int cost;
+        
         private int dps;
         Thread damage = new Thread(new ParameterizedThreadStart(Dps));
         public static Semaphore maxdmg = new Semaphore(0, 5);
         
 
-        public Swordman(string imagePath, Vector2D startPosition, int dps, int cost) : base(imagePath, startPosition)
+        public Swordman(string imagePath, Vector2D startPosition, int dps) : base(imagePath, startPosition)
         {
             this.dps = dps;
-            this.cost = cost;
             damage.Start(dps);
             
-        }
-        public static void Cost(int cost)
-        {
-            GameWorld.Gold -= cost;
         }
         public static void Dps(object obj)
         {
@@ -36,7 +31,7 @@ namespace CookieClicker
                 maxdmg.WaitOne();
                 GameWorld.BossHealth -= dps;
                 maxdmg.Release();
-                Thread.Sleep(500);
+                Thread.Sleep(1000);
             }
         }
         public override void Draw(Graphics dc)

@@ -11,30 +11,14 @@ namespace CookieClicker
 
     class Unit : GameObject
     {
-        private int dps;
-        Thread damage = new Thread(new ParameterizedThreadStart(Dps));
 
-        public Unit(string imagePath, Vector2D startPosition, int dps) : base(imagePath, startPosition)
-        {
-            this.dps = dps;
-            damage.Start(dps);
-        }
         public Unit(string imagePath, Vector2D startPosition) : base(imagePath, startPosition)
         { }
         public static void Cost(int cost)
         {
             GameWorld.Gold -= cost;
         }
-        public static void Dps(object obj)
-        {
-            int dps = (int)obj;
-            while (true)
-            {
-
-            GameWorld.BossHealth -= dps;
-            Thread.Sleep(500);
-            }
-        }
+       
         public override void Draw(Graphics dc)
         {
             base.Draw(dc);
