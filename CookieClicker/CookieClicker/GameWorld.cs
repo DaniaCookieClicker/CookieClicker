@@ -12,10 +12,15 @@ namespace CookieClicker
 
     class GameWorld
     {
+        private static int swordmanCost = 10;
+        private static int archerCost = 20;
+        private static int knightCost = 40;
+        private static int weaponCost = 10;
+
         private static int level = 1;
         private static int bossHealth = 6;
         private static int fixedHealth = 6;
-        private static int playerDmg = 5;
+        private static int playerDmg = 1;
         private static int gold = 0;
         private static List<GameObject> toRemove = new List<GameObject>();
         public static List<GameObject> toAdd = new List<GameObject>();
@@ -86,6 +91,58 @@ namespace CookieClicker
             set
             {
                 level = value;
+            }
+        }
+
+        public static int SwordmanCost
+        {
+            get
+            {
+                return swordmanCost;
+            }
+
+            set
+            {
+                swordmanCost = value;
+            }
+        }
+
+        public static int ArcherCost
+        {
+            get
+            {
+                return archerCost;
+            }
+
+            set
+            {
+                archerCost = value;
+            }
+        }
+
+        public static int KnightCost
+        {
+            get
+            {
+                return knightCost;
+            }
+
+            set
+            {
+                knightCost = value;
+            }
+        }
+
+        public static int WeaponCost
+        {
+            get
+            {
+                return weaponCost;
+            }
+
+            set
+            {
+                weaponCost = value;
             }
         }
 
@@ -161,17 +218,26 @@ namespace CookieClicker
             dc.DrawString(string.Format("Boss Health: {0}", bossHealth), f, Brushes.Black, 350, 10);
             dc.DrawString(string.Format("Gold: {0}", gold), f, Brushes.Black, 120, 10);
             dc.DrawString(string.Format("Level: {0}", Level), f, Brushes.Black, 10, 10);
+            dc.DrawString(string.Format("Player Dmg: {0}", playerDmg), f, Brushes.Black, 600, 10);
+            dc.DrawString(string.Format("Cost: {0}", swordmanCost), f, Brushes.Black, 86, 50);
+            dc.DrawString(string.Format("Cost: {0}", archerCost), f, Brushes.Black, 86, 160);
+            dc.DrawString(string.Format("Cost: {0}", knightCost), f, Brushes.Black, 120, 270);
+            dc.DrawString(string.Format("Cost: {0}", weaponCost), f, Brushes.Black, 120, 385);
+
+
+
 #if DEBUG
-            dc.DrawString(string.Format("FPS: {0}", currentFps), f, Brushes.Black, 100, 100);
+            dc.DrawString(string.Format("FPS: {0}", currentFps), f, Brushes.Black, 600, 300);
 #endif 
             backBuffer.Render();
         }
         private static void FinishedLevel()
         {
-            gold += fixedHealth * Level;
+            gold += fixedHealth;
+            fixedHealth *= 2;
             bossHealth = 0;
             Level++;
-            BossHealth += fixedHealth * Level;
+            BossHealth += fixedHealth;
         }
     }
 }
