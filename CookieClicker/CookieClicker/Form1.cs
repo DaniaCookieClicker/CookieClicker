@@ -74,10 +74,15 @@ namespace CookieClicker
         {
             if (GameWorld.Gold >= GameWorld.SwordmanCost)
             {
+<<<<<<< HEAD
                 GameWorld.Gold -= GameWorld.SwordmanCost;
                 GameWorld.SwordmanCost *= 2;
                 swordmanDmg *= 2;
                 Unit sword = new Unit("Sprites/Swordman/SmAttack1.png;Sprites/Swordman/SmAttack2.png;Sprites/Swordman/SmAttack3.png;Sprites/Swordman/SmAttack4.png;Sprites/Swordman/SmAttack5.png;Sprites/Swordman/SmAttack6.png;Sprites/Swordman/SmAttack7.png;Sprites/Swordman/SmAttack8.png;Sprites/Swordman/SmAttack9.png;Sprites/Swordman/SmAttack10.png;Sprites/Swordman/SmAttack11.png", new Vector2D(200, 50), swordmanDmg);
+=======
+
+                Unit sword = new Swordman("Sprites/Swordman/SmAttack1.png;Sprites/Swordman/SmAttack2.png;Sprites/Swordman/SmAttack3.png;Sprites/Swordman/SmAttack4.png;Sprites/Swordman/SmAttack5.png;Sprites/Swordman/SmAttack6.png;Sprites/Swordman/SmAttack7.png;Sprites/Swordman/SmAttack8.png;Sprites/Swordman/SmAttack9.png;Sprites/Swordman/SmAttack10.png;Sprites/Swordman/SmAttack11.png", new Vector2D(200, 50), 2, 10);
+>>>>>>> 7e9304ec4524280010d8136f44a7422d81333cc8
                 GameWorld.toAdd.Add(sword);
             }
         }
@@ -86,10 +91,15 @@ namespace CookieClicker
         {
             if (GameWorld.Gold >= GameWorld.ArcherCost)
             {
+<<<<<<< HEAD
                 GameWorld.Gold -= GameWorld.ArcherCost;
                 GameWorld.ArcherCost *= 2;
                 archerDmg *= 2;
                 Unit archer = new Unit("Sprites/Archer/ArcAttack1.png;Sprites/Archer/ArcAttack2.png;Sprites/Archer/ArcAttack3.png;Sprites/Archer/ArcAttack4.png;Sprites/Archer/ArcAttack5.png;Sprites/Archer/ArcAttack6.png;Sprites/Archer/ArcAttack7.png;Sprites/Archer/ArcAttack8.png;Sprites/Archer/ArcAttack9.png;Sprites/Archer/ArcAttack10.png;Sprites/Archer/ArcAttack11.png;Sprites/Archer/ArcAttack12.png", new Vector2D(200, 200), archerDmg);
+=======
+
+                Unit archer = new Archer("Sprites/Archer/ArcAttack1.png;Sprites/Archer/ArcAttack2.png;Sprites/Archer/ArcAttack3.png;Sprites/Archer/ArcAttack4.png;Sprites/Archer/ArcAttack5.png;Sprites/Archer/ArcAttack6.png;Sprites/Archer/ArcAttack7.png;Sprites/Archer/ArcAttack8.png;Sprites/Archer/ArcAttack9.png;Sprites/Archer/ArcAttack10.png;Sprites/Archer/ArcAttack11.png;Sprites/Archer/ArcAttack12.png", new Vector2D(200, 200), 15, 40);
+>>>>>>> 7e9304ec4524280010d8136f44a7422d81333cc8
                 GameWorld.toAdd.Add(archer);
             }
         }
@@ -98,10 +108,15 @@ namespace CookieClicker
         {
             if (GameWorld.Gold >= GameWorld.KnightCost)
             {
+<<<<<<< HEAD
                 GameWorld.Gold -= GameWorld.KnightCost;
                 GameWorld.KnightCost *= 2;
                 knightDmg *= 2;
                 Unit knight = new Unit("Sprites/Knight/KniAttack1.png;Sprites/Knight/KniAttack2.png;Sprites/Knight/KniAttack3.png;Sprites/Knight/KniAttack4.png;Sprites/Knight/KniAttack5.png;Sprites/Knight/KniAttack6.png;Sprites/Knight/KniAttack7.png;Sprites/Knight/KniAttack8.png;Sprites/Knight/KniAttack9.png", new Vector2D(200, 250), knightDmg);
+=======
+
+                Unit knight = new Knight("Sprites/Knight/KniAttack1.png;Sprites/Knight/KniAttack2.png;Sprites/Knight/KniAttack3.png;Sprites/Knight/KniAttack4.png;Sprites/Knight/KniAttack5.png;Sprites/Knight/KniAttack6.png;Sprites/Knight/KniAttack7.png;Sprites/Knight/KniAttack8.png;Sprites/Knight/KniAttack9.png", new Vector2D(200, 250), 15, 40);
+>>>>>>> 7e9304ec4524280010d8136f44a7422d81333cc8
                 GameWorld.toAdd.Add(knight);
             }
         }
