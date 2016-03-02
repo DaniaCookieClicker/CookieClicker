@@ -76,6 +76,19 @@ namespace CookieClicker
             }
         }
 
+        public static int Level
+        {
+            get
+            {
+                return level;
+            }
+
+            set
+            {
+                level = value;
+            }
+        }
+
         public GameWorld(Graphics dc, Rectangle displayRectangle)
         {
             this.displayRectangle = displayRectangle;
@@ -142,7 +155,7 @@ namespace CookieClicker
             Font f = new Font("Arial", 16);
             dc.DrawString(string.Format("Boss Health: {0}", bossHealth), f, Brushes.Black, 350, 10);
             dc.DrawString(string.Format("Gold: {0}", gold), f, Brushes.Black, 120, 10);
-            dc.DrawString(string.Format("Level: {0}", level), f, Brushes.Black, 10, 10);
+            dc.DrawString(string.Format("Level: {0}", Level), f, Brushes.Black, 10, 10);
 #if DEBUG
             dc.DrawString(string.Format("FPS: {0}", currentFps), f, Brushes.Black, 100, 100);
 #endif 
@@ -153,15 +166,15 @@ namespace CookieClicker
             if (BossHealth <= 0)
             {
                 bossHealth = 0;
-                level ++;
-                BossHealth += fixedHealth * level;
+                Level ++;
+                BossHealth += fixedHealth * Level;
             }
         }
         private static void GetGold()
         {
             if (bossHealth <= 0)
             {
-                    gold += fixedHealth * level;
+                    gold += fixedHealth * Level;
             }
         }
     }

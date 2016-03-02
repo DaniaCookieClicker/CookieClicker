@@ -38,8 +38,22 @@ namespace CookieClicker
             GameWorld.BossHealth -= GameWorld.PlayerDmg;
             //if (GameWorld.BossHealth>0)
             //{
-               // pictureBox1.Image = ((Image)Properties.Resources.ResourceManager.GetObject("Sprites/Dragon/dragon1.png"));
+            // pictureBox1.Image = ((Image)Properties.Resources.ResourceManager.GetObject("Sprites/Dragon/dragon1.png"));
+            if (GameWorld.Level == 2)
+            {
+
             pictureBox1.Image = Image.FromFile("Sprites/Dragon/dragon1.png");
+                pictureBox1.Refresh();
+                pictureBox1.Visible = true;
+                pictureBox1.Load();
+            }
+            if (GameWorld.Level == 3)
+            {
+
+                pictureBox1.Image = Image.FromFile("Sprites/Dragon/dragon2.png");
+                pictureBox1.Refresh();
+                pictureBox1.Visible = true;
+            }
             //pictureBox1.Refresh();
             //pictureBox1.Visible = true;
             // }
