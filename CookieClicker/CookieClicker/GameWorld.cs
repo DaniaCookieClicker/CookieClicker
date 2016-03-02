@@ -156,6 +156,7 @@ namespace CookieClicker
         }
         public void SetupWorld()
         {
+            Swordman.maxdmg.Release(5);
         }
         public void GameLoop()
         {
