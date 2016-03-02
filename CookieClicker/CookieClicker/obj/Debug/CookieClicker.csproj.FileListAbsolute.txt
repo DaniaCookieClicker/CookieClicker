@@ -160,4 +160,3 @@ D:\semester 2 projekter\CookieClicker\CookieClicker\CookieClicker\obj\Debug\Cook
 D:\semester 2 projekter\CookieClicker\CookieClicker\CookieClicker\obj\Debug\CookieClicker.Form1.resources
 D:\semester 2 projekter\CookieClicker\CookieClicker\CookieClicker\obj\Debug\CookieClicker.Properties.Resources.resources
 D:\semester 2 projekter\CookieClicker\CookieClicker\CookieClicker\obj\Debug\CookieClicker.csproj.GenerateResource.Cache
-D:\Dania Games\Dania - Projekter\CookieClicker\CookieClicker\CookieClicker\obj\Debug\CookieClicker.csprojResolveAssemblyReference.cache
