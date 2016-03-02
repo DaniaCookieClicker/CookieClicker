@@ -20,7 +20,7 @@ namespace CookieClicker
         private static int level = 1;
         private static int bossHealth = 6;
         private static int fixedHealth = 6;
-        private static int playerDmg = 1;
+        private static int playerDmg = 100;
         private static int gold = 0;
         private static List<GameObject> toRemove = new List<GameObject>();
         public static List<GameObject> toAdd = new List<GameObject>();

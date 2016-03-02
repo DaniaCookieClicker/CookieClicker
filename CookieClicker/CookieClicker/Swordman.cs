@@ -11,14 +11,12 @@ namespace CookieClicker
     class Swordman : Unit
     {
         
-        private int dps;
         Thread damage = new Thread(new ParameterizedThreadStart(Dps));
         public static Semaphore maxdmg = new Semaphore(0, 5);
         
 
         public Swordman(string imagePath, Vector2D startPosition, int dps) : base(imagePath, startPosition)
         {
-            this.dps = dps;
             damage.Start(dps);
             
         }

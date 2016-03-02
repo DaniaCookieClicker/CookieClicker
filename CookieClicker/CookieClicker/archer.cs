@@ -10,24 +10,23 @@ namespace CookieClicker
 {
     class Archer : Unit
     {
-        private int cost;
-        private int dps;
+        static Mutex handleDamage = new Mutex();
         Thread damage = new Thread(new ParameterizedThreadStart(Dps));
-
         public Archer(string imagePath, Vector2D startPosition, int dps) : base(imagePath, startPosition)
         {
-            this.dps = dps;
             damage.Start(dps);
+
         }
-       
+
         public static void Dps(object obj)
         {
             int dps = (int)obj;
             while (true)
             {
-
+                handleDamage.WaitOne();
                 GameWorld.BossHealth -= dps;
-                Thread.Sleep(500);
+                handleDamage.ReleaseMutex();
+                Thread.Sleep(1500);
             }
         }
         public override void Draw(Graphics dc)
