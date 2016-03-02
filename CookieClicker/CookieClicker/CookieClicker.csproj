@@ -183,6 +183,7 @@
     <Content Include="Sprites\Knight\KniAttack9.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Sprites\Sword.png" />
     <Content Include="Sprites\swordman.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
