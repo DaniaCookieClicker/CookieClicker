@@ -8,8 +8,8 @@ using System.Threading;
 
 namespace CookieClicker
 {
-        
-    
+
+
     class GameWorld
     {
         private static int level = 1;
@@ -118,8 +118,10 @@ namespace CookieClicker
             ToRemove.Clear();
             gameObj.AddRange(toAdd);
             toAdd.Clear();
-            GetGold();
-            Combat();
+            if (bossHealth <= 0)
+            {
+                FinishedLevel();
+            }
             UpdateAnimations(currentFps);
             Update(currentFps);
             Draw();
@@ -128,8 +130,8 @@ namespace CookieClicker
         {
             this.currentFps = fps;
             endTime = DateTime.Now;
-            
-            foreach  ( GameObject go in gameObj)
+
+            foreach (GameObject go in gameObj)
             {
                 go.Update(fps);
             }
@@ -161,21 +163,12 @@ namespace CookieClicker
 #endif 
             backBuffer.Render();
         }
-        private static void Combat()
+        private static void FinishedLevel()
         {
-            if (BossHealth <= 0)
-            {
-                bossHealth = 0;
-                Level ++;
-                BossHealth += fixedHealth * Level;
-            }
-        }
-        private static void GetGold()
-        {
-            if (bossHealth <= 0)
-            {
-                    gold += fixedHealth * Level;
-            }
+            gold += fixedHealth * Level;
+            bossHealth = 0;
+            Level++;
+            BossHealth += fixedHealth * Level;
         }
     }
 }
