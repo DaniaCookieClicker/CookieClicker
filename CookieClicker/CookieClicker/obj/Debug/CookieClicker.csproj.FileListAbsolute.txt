@@ -109,6 +109,7 @@ D:\Dania Games\Dania - Projekter\CookieClicker\CookieClicker\CookieClicker\bin\D
 D:\Dania Games\Dania - Projekter\CookieClicker\CookieClicker\CookieClicker\bin\Debug\Sprites\Swordman\Smattack7.png
 D:\Dania Games\Dania - Projekter\CookieClicker\CookieClicker\CookieClicker\bin\Debug\Sprites\Swordman\Smattack8.png
 D:\Dania Games\Dania - Projekter\CookieClicker\CookieClicker\CookieClicker\bin\Debug\Sprites\Swordman\Smattack9.png
+D:\Dania Games\Dania - Projekter\CookieClicker\CookieClicker\CookieClicker\obj\Debug\CookieClicker.csprojResolveAssemblyReference.cache
 D:\semester 2 projekter\CookieClicker\CookieClicker\CookieClicker\bin\Debug\Sprites\Archer.png
 D:\semester 2 projekter\CookieClicker\CookieClicker\CookieClicker\bin\Debug\Sprites\Archer\ArcAttack1.png
 D:\semester 2 projekter\CookieClicker\CookieClicker\CookieClicker\bin\Debug\Sprites\Archer\ArcAttack10.png
