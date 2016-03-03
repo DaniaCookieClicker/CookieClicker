@@ -18,6 +18,7 @@ namespace CookieClicker
         GameWorld gw;
         int choosenDragon;
         int prevDragon;
+        static Object thisLock = new Object();
         public Form1()
         {
             InitializeComponent();
@@ -65,30 +66,31 @@ namespace CookieClicker
                 prevDragon = choosenDragon;
 
             }
-
-
-        }
+ }
 
         public void AlternativeClick()
         {
-            if (GameWorld.BossHealth <= 0)
+            lock (thisLock)
             {
-                Random rand = new Random();
-
-                choosenDragon = rand.Next(1, 10);
-                if (prevDragon == choosenDragon)
+                if (GameWorld.BossHealth <= 0)
                 {
+                    Random rand = new Random();
+
                     choosenDragon = rand.Next(1, 10);
+                    if (prevDragon == choosenDragon)
+                    {
+                        choosenDragon = rand.Next(1, 10);
+                    }
+
+
+                    pictureBox1.Image = Image.FromFile("Sprites/Dragon/dragon" + choosenDragon + ".png");
+
+                    pictureBox1.Invoke((MethodInvoker)delegate { pictureBox1.Refresh(); });
+                    pictureBox1.Invoke((MethodInvoker)delegate { pictureBox1.Visible = true; });
+
+                    prevDragon = choosenDragon;
+
                 }
-
-
-                pictureBox1.Image = Image.FromFile("Sprites/Dragon/dragon" + choosenDragon + ".png");
-
-                pictureBox1.Invoke((MethodInvoker)delegate { pictureBox1.Refresh(); });
-                pictureBox1.Invoke((MethodInvoker)delegate { pictureBox1.Visible = true; });
-
-                prevDragon = choosenDragon;
-
             }
         }
         int swordmanDmg = 2;

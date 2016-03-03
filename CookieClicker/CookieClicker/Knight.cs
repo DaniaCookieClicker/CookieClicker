@@ -30,7 +30,7 @@ namespace CookieClicker
                     GameWorld.BossHealth -= dps;
                     myForm.AlternativeClick();
                 }
-                Thread.Sleep(500);
+                Thread.Sleep(1500);
             }
         }
         public override void Draw(Graphics dc)
