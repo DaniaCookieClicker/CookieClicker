@@ -13,7 +13,7 @@ namespace CookieClicker
     public partial class Form1 : Form
     {
         Random position = new Random();
-
+        
         Graphics dc;
         GameWorld gw;
         int choosenDragon;
@@ -40,9 +40,7 @@ namespace CookieClicker
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             GameWorld.BossHealth -= GameWorld.PlayerDmg;
-            //if (GameWorld.BossHealth>0)
-            //{
-            // pictureBox1.Image = ((Image)Properties.Resources.ResourceManager.GetObject("Sprites/Dragon/dragon1.png"));
+      
             if (GameWorld.BossHealth <= 0)
             {
                 Random rand = new Random();
@@ -61,15 +59,31 @@ namespace CookieClicker
                 prevDragon = choosenDragon;
 
             }
-            //if (GameWorld.BossHealth > 0&&GameWorld.Level == 3)
-            //{
+           
 
-            //    pictureBox1.Image = Image.FromFile("Sprites/Dragon/dragon2.png");
-            //    pictureBox1.Refresh();
-            //    pictureBox1.Visible = true;
+        }
 
-            //}
+        public void AlternativeClick()
+        {
+            if (GameWorld.BossHealth <= 0)
+            {
+                Random rand = new Random();
 
+                choosenDragon = rand.Next(1, 10);
+                if (prevDragon == choosenDragon)
+                {
+                    choosenDragon = rand.Next(1, 10);
+                }
+
+
+                pictureBox1.Image = Image.FromFile("Sprites/Dragon/dragon" + choosenDragon + ".png");
+
+                pictureBox1.Invoke((MethodInvoker)delegate { pictureBox1.Refresh(); });
+                pictureBox1.Invoke((MethodInvoker)delegate { pictureBox1.Visible = true; });
+                
+                prevDragon = choosenDragon;
+
+            }
         }
         int swordmanDmg = 2;
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -78,7 +92,7 @@ namespace CookieClicker
             {
                 GameWorld.Gold -= GameWorld.SwordmanCost;
                 GameWorld.SwordmanCost *= 2;
-                Unit sword = new Swordman("Sprites/Swordman/SmAttack1.png;Sprites/Swordman/SmAttack2.png;Sprites/Swordman/SmAttack3.png;Sprites/Swordman/SmAttack4.png;Sprites/Swordman/SmAttack8.png", new Vector2D(200, 50), swordmanDmg);
+                Unit sword = new Swordman("Sprites/Swordman/SmAttack1.png;Sprites/Swordman/SmAttack2.png;Sprites/Swordman/SmAttack3.png;Sprites/Swordman/SmAttack4.png;Sprites/Swordman/SmAttack8.png", new Vector2D(position.Next(200,500), 50), swordmanDmg,this);
                 swordmanDmg *= 2;
                 GameWorld.SwordmanCount++;
                 GameWorld.toAdd.Add(sword);
@@ -91,7 +105,7 @@ namespace CookieClicker
             {
                 GameWorld.Gold -= GameWorld.ArcherCost;
                 GameWorld.ArcherCost *= 2;
-                Unit archer = new Archer("Sprites/Archer/ArcAttack1.png;Sprites/Archer/ArcAttack2.png;Sprites/Archer/ArcAttack3.png;Sprites/Archer/ArcAttack4.png;Sprites/Archer/ArcAttack9.png;Sprites/Archer/ArcAttack10.png;Sprites/Archer/ArcAttack11.png;Sprites/Archer/ArcAttack12.png", new Vector2D(200, 200), archerDmg);
+                Unit archer = new Archer("Sprites/Archer/ArcAttack1.png;Sprites/Archer/ArcAttack2.png;Sprites/Archer/ArcAttack3.png;Sprites/Archer/ArcAttack4.png;Sprites/Archer/ArcAttack9.png;Sprites/Archer/ArcAttack10.png;Sprites/Archer/ArcAttack11.png;Sprites/Archer/ArcAttack12.png", new Vector2D(position.Next(200, 500), 200), archerDmg,this);
                 archerDmg *= 2;
                 GameWorld.ArcherCount++;
                 GameWorld.toAdd.Add(archer);
@@ -104,7 +118,7 @@ namespace CookieClicker
             {
                 GameWorld.Gold -= GameWorld.KnightCost;
                 GameWorld.KnightCost *= 2;
-                Unit knight = new Knight("Sprites/Knight/KniAttack1.png;Sprites/Knight/KniAttack2.png;Sprites/Knight/KniAttack4.png;Sprites/Knight/KniAttack5.png", new Vector2D(200, 250), knightDmg);
+                Unit knight = new Knight("Sprites/Knight/KniAttack1.png;Sprites/Knight/KniAttack2.png;Sprites/Knight/KniAttack4.png;Sprites/Knight/KniAttack5.png", new Vector2D(position.Next(200, 425), 250), knightDmg,this);
                 knightDmg *= 2;
                 GameWorld.KnightCount++;
                 GameWorld.toAdd.Add(knight);

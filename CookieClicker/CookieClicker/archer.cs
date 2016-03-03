@@ -10,11 +10,14 @@ namespace CookieClicker
 {
     class Archer : Unit
     {
+        private static Form1 myForm;
+
         static Mutex handleDamage = new Mutex();
         Thread damage = new Thread(new ParameterizedThreadStart(Dps));
-        public Archer(string imagePath, Vector2D startPosition, int dps) : base(imagePath, startPosition)
+        public Archer(string imagePath, Vector2D startPosition, int dps, Form1 newForm) : base(imagePath, startPosition)
         {
             damage.Start(dps);
+            myForm = newForm;
 
         }
 
@@ -25,8 +28,10 @@ namespace CookieClicker
             {
                 handleDamage.WaitOne();
                 GameWorld.BossHealth -= dps;
+                myForm.AlternativeClick();
                 handleDamage.ReleaseMutex();
                 Thread.Sleep(1500);
+
             }
         }
         public override void Draw(Graphics dc)

@@ -10,15 +10,14 @@ namespace CookieClicker
 {
     class Knight : Unit
     {
-        private int cost;
-        private int dps;
+        private static Form1 myForm;
         static Object thisLock = new Object();
         Thread damage = new Thread(new ParameterizedThreadStart(Dps));
 
-        public Knight(string imagePath, Vector2D startPosition, int dps) : base(imagePath, startPosition)
+        public Knight(string imagePath, Vector2D startPosition, int dps, Form1 newForm) : base(imagePath, startPosition)
         {
-            this.dps = dps;
             damage.Start(dps);
+            myForm = newForm;
         }
         public static void Dps(object obj)
         {
@@ -27,8 +26,8 @@ namespace CookieClicker
             {
                 lock (thisLock)
                 {
-                GameWorld.BossHealth -= dps;
-
+                    GameWorld.BossHealth -= dps;
+                    myForm.AlternativeClick();
                 }
                 Thread.Sleep(500);
             }
