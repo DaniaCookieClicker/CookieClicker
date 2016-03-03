@@ -16,7 +16,9 @@ namespace CookieClicker
         private static int archerCost = 20;
         private static int knightCost = 40;
         private static int weaponCost = 10;
-
+        private static int knightCount;
+        private static int archerCount;
+        private static int swordmanCount;
         private static int level = 1;
         private static int bossHealth = 6;
         private static int fixedHealth = 6;
@@ -143,6 +145,45 @@ namespace CookieClicker
             set
             {
                 weaponCost = value;
+            }
+        }
+
+        public static int KnightCount
+        {
+            get
+            {
+                return knightCount;
+            }
+
+            set
+            {
+                knightCount = value;
+            }
+        }
+
+        public static int ArcherCount
+        {
+            get
+            {
+                return archerCount;
+            }
+
+            set
+            {
+                archerCount = value;
+            }
+        }
+
+        public static int SwordmanCount
+        {
+            get
+            {
+                return swordmanCount;
+            }
+
+            set
+            {
+                swordmanCount = value;
             }
         }
 
