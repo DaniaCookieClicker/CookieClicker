@@ -61,6 +61,7 @@ namespace CookieClicker
 
                 pictureBox1.Refresh();
                 pictureBox1.Visible = true;
+                //this.PictureBox1.SizeMode = PictureBoxSizeMode.
                 prevDragon = choosenDragon;
 
             }
