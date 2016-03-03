@@ -39,7 +39,7 @@ namespace CookieClicker
         }
         public virtual void UpdateAnimation(float fps)
         {
-            float factor = 1 / fps;
+            float factor = 1/ fps;
 
             currentFrameIndex += factor * animationFrames.Count;
 
