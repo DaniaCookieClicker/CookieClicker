@@ -43,7 +43,7 @@ namespace CookieClicker
             get { return toRemove; }
             set { toRemove = value; }
         }
-
+        #region Properties
         public static int Gold
         {
             get
@@ -186,7 +186,7 @@ namespace CookieClicker
                 swordmanCount = value;
             }
         }
-
+        #endregion
         public GameWorld(Graphics dc, Rectangle displayRectangle)
         {
             this.displayRectangle = displayRectangle;
@@ -260,9 +260,9 @@ namespace CookieClicker
             dc.DrawString(string.Format("Gold: {0}", gold), f, Brushes.Black, 120, 10);
             dc.DrawString(string.Format("Level: {0}", Level), f, Brushes.Black, 10, 10);
             dc.DrawString(string.Format("Player Dmg: {0}", playerDmg), f, Brushes.Black, 600, 10);
-            dc.DrawString(string.Format("Cost: {0}", swordmanCost), f, Brushes.Black, 86, 50);
-            dc.DrawString(string.Format("Cost: {0}", archerCost), f, Brushes.Black, 86, 160);
-            dc.DrawString(string.Format("Cost: {0}", knightCost), f, Brushes.Black, 120, 270);
+            dc.DrawString(string.Format("Cost: {0} Count: {1}", swordmanCost, swordmanCount), f, Brushes.Black, 86, 50);
+            dc.DrawString(string.Format("Cost: {0} Count: {1}", archerCost, archerCount), f, Brushes.Black, 86, 160);
+            dc.DrawString(string.Format("Cost: {0} Count: {1}", knightCost, knightCount), f, Brushes.Black, 120, 270);
             dc.DrawString(string.Format("Cost: {0}", weaponCost), f, Brushes.Black, 120, 385);
 
 
