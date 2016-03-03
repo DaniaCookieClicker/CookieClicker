@@ -100,7 +100,7 @@ namespace CookieClicker
             {
                 GameWorld.Gold -= GameWorld.SwordmanCost;
                 GameWorld.SwordmanCost *= 2;
-                Unit sword = new Swordman("Sprites/Swordman/SmAttack1.png;Sprites/Swordman/SmAttack2.png;Sprites/Swordman/SmAttack3.png;Sprites/Swordman/SmAttack4.png;Sprites/Swordman/SmAttack8.png", new Vector2D(position.Next(200, 500), 50), swordmanDmg, this);
+                Unit sword = new Swordman("Sprites/Swordman/SmAttack1.png;Sprites/Swordman/SmAttack2.png;Sprites/Swordman/SmAttack3.png;Sprites/Swordman/SmAttack4.png;Sprites/Swordman/SmAttack8.png", new Vector2D(position.Next(200, 450), 50), swordmanDmg, this);
                 swordmanDmg *= 2;
                 GameWorld.SwordmanCount++;
                 GameWorld.toAdd.Add(sword);
@@ -113,7 +113,7 @@ namespace CookieClicker
             {
                 GameWorld.Gold -= GameWorld.ArcherCost;
                 GameWorld.ArcherCost *= 2;
-                Unit archer = new Archer("Sprites/Archer/ArcAttack1.png;Sprites/Archer/ArcAttack2.png;Sprites/Archer/ArcAttack3.png;Sprites/Archer/ArcAttack4.png;Sprites/Archer/ArcAttack9.png;Sprites/Archer/ArcAttack10.png;Sprites/Archer/ArcAttack11.png;Sprites/Archer/ArcAttack12.png", new Vector2D(position.Next(200, 500), 200), archerDmg, this);
+                Unit archer = new Archer("Sprites/Archer/ArcAttack1.png;Sprites/Archer/ArcAttack2.png;Sprites/Archer/ArcAttack3.png;Sprites/Archer/ArcAttack4.png;Sprites/Archer/ArcAttack9.png;Sprites/Archer/ArcAttack10.png;Sprites/Archer/ArcAttack11.png;Sprites/Archer/ArcAttack12.png", new Vector2D(position.Next(200, 450), 200), archerDmg, this);
                 archerDmg *= 2;
                 GameWorld.ArcherCount++;
                 GameWorld.toAdd.Add(archer);
