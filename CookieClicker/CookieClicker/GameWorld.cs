@@ -286,7 +286,7 @@ namespace CookieClicker
             {
                 gameObj.Clear();
                 PlayerDmg = 0;
-
+                Gold = 0;
             }
         }
     }
