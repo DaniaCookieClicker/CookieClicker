@@ -12,6 +12,7 @@ namespace CookieClicker
     {
         private int cost;
         private int dps;
+        static Object thisLock = new Object();
         Thread damage = new Thread(new ParameterizedThreadStart(Dps));
 
         public Knight(string imagePath, Vector2D startPosition, int dps) : base(imagePath, startPosition)
@@ -24,8 +25,11 @@ namespace CookieClicker
             int dps = (int)obj;
             while (true)
             {
-
+                lock (thisLock)
+                {
                 GameWorld.BossHealth -= dps;
+
+                }
                 Thread.Sleep(500);
             }
         }
