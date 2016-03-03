@@ -32,7 +32,6 @@ namespace CookieClicker
         private float currentFps;
         private BufferedGraphics backBuffer;
         private Rectangle displayRectangle;
-        private Rectangle displayRect;
         public static List<GameObject> GameObj
         {
             get { return gameObj; }
@@ -221,6 +220,7 @@ namespace CookieClicker
             {
                 FinishedLevel();
             }
+            GameDone(dc);
             UpdateAnimations(currentFps);
             Update(currentFps);
             Draw();
@@ -279,6 +279,15 @@ namespace CookieClicker
             bossHealth = 0;
             Level++;
             BossHealth += fixedHealth;
+        }
+        private void GameDone(Graphics dc)
+        {
+            if (bossHealth >= 2000000000)
+            {
+                gameObj.Clear();
+                PlayerDmg = 0;
+
+            }
         }
     }
 }

@@ -26,8 +26,9 @@ namespace CookieClicker
         public static void Dps(object obj)
         {
             int dps = (int)obj;
-            
-            while (true)
+
+            while (GameWorld.BossHealth <= 2000000000)
+
             {
                 maxdmg.WaitOne();
                 GameWorld.BossHealth -= dps;
